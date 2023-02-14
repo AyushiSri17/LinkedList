@@ -42,7 +42,36 @@ namespace LinkedList
             AddLast(data);
         }
 
-        public void Display()
+        public void Insert(int data, int new_data)
+        {
+            Node temp = head;
+            bool isFound=false;
+            Node new_node = new Node(new_data);
+            if (temp == null)
+            {
+                Console.WriteLine("Linked list is empty");
+            }
+            else
+            {
+                while (temp!=null)
+                {
+                    if (temp.data==data)
+                    {
+                        new_node.next = temp.next;
+                        temp.next = new_node;
+                        isFound = true;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+                if (isFound==false)
+                {
+                    Console.WriteLine("{0} node is not present {1}", data);
+                }
+            }
+        }
+
+            public void Display()
         {
             Node temp = head;
             if (temp == null)
