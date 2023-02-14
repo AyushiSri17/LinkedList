@@ -71,7 +71,16 @@ namespace LinkedList
             }
         }
 
-            public void Display()
+        public void RemoveFirst()
+        {
+            if (head == null)
+                Console.WriteLine("LinkedList is empty");
+            else
+                Console.WriteLine("{0} is removed", head.data);
+            head = head.next;
+        }
+
+        public void Display()
         {
             Node temp = head;
             if (temp == null)
