@@ -26,6 +26,15 @@ namespace LinkedList
                 temp.next = new_node;
             }
         }
+
+        public void AddFirst(int data)
+        {
+
+            Node new_node = new Node(data);
+            new_node.next = head;
+            head = new_node;
+            Console.WriteLine("{0} is inserted into LikedList", new_node.data);
+        }
         public void Display()
         {
             Node temp = head;
