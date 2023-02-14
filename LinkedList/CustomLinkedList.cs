@@ -105,6 +105,29 @@ namespace LinkedList
             Console.WriteLine("{0} node is deleted ", lastDeleteNode);
         }
 
+        public void Search(int data)
+        {
+            bool isFound = false;
+            Node temp = head;
+            if (temp == null)
+                Console.WriteLine("Linked List is Empty");
+            else
+            {
+                while (temp != null)
+                {
+                    if (temp.data == data)
+                    {
+                        Console.WriteLine("{0} node is present", temp.data);
+                        isFound = true;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+                if (isFound==false)
+                    Console.WriteLine("{0} node is not present", data);
+            }
+        }
+
         public void Display()
         {
             Node temp = head;

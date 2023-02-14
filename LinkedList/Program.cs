@@ -13,7 +13,7 @@ namespace LinkedList
             Console.WriteLine("Welcome to LinkedList Programs");
             Console.WriteLine("Choose the option to perform the action");
             CustomLinkedList linkedList = new CustomLinkedList();
-            Console.WriteLine("1. AddLast \n2. AddFirst \n3. Append \n4. Instert new node in between \n5. Remove first node \n6. Remove Last node");
+            Console.WriteLine("1. AddLast \n2. AddFirst \n3. Append \n4. Instert new node in between \n5. Remove first node \n6. Remove Last node \n7. Search Node");
             int option=Convert.ToInt32(Console.ReadLine());
             switch(option)
             {
@@ -54,6 +54,12 @@ namespace LinkedList
                     linkedList.AddLast(70);
                     linkedList.RemoveLast();
                     linkedList.Display();//56 30
+                    break;
+                case 7:
+                    linkedList.AddLast(56);
+                    linkedList.AddLast(30);
+                    linkedList.AddLast(70);
+                    linkedList.Search(70);
                     break;
                 default:
                     Console.WriteLine("Please Choose the correct option");
