@@ -25,6 +25,7 @@ namespace LinkedList
                 }
                 temp.next = new_node;
             }
+            Console.WriteLine("{0} is added", new_node.data);
         }
 
         public void AddFirst(int data)
@@ -35,6 +36,12 @@ namespace LinkedList
             head = new_node;
             Console.WriteLine("{0} is inserted into LikedList", new_node.data);
         }
+
+        public void Append(int data)
+        {
+            AddLast(data);
+        }
+
         public void Display()
         {
             Node temp = head;
