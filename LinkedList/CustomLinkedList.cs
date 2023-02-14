@@ -80,6 +80,31 @@ namespace LinkedList
             head = head.next;
         }
 
+        public void RemoveLast()
+        {
+            Node temp = head;
+            if (temp == null)
+                Console.WriteLine("LinkedList is empty");
+            if (temp.next == null)
+            {
+                int data = temp.data;
+                temp = null;
+                head = temp;
+                Console.WriteLine("{0} Node is deleted", data);
+            }
+            else
+            {
+                while (temp.next.next != null)
+                {
+                    temp = temp.next;
+                }
+
+            }
+            int lastDeleteNode = temp.next.data;
+            temp.next = null;
+            Console.WriteLine("{0} node is deleted ", lastDeleteNode);
+        }
+
         public void Display()
         {
             Node temp = head;
