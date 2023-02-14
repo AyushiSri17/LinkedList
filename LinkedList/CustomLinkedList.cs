@@ -59,6 +59,7 @@ namespace LinkedList
                     {
                         new_node.next = temp.next;
                         temp.next = new_node;
+                        Console.WriteLine("\n{0} is inserted", new_data);
                         isFound = true;
                         break;
                     }
@@ -66,7 +67,7 @@ namespace LinkedList
                 }
                 if (isFound==false)
                 {
-                    Console.WriteLine("{0} node is not present {1}", data);
+                    Console.WriteLine("{0} node is not present",data);
                 }
             }
         }
@@ -102,7 +103,7 @@ namespace LinkedList
             }
             int lastDeleteNode = temp.next.data;
             temp.next = null;
-            Console.WriteLine("{0} node is deleted ", lastDeleteNode);
+            Console.WriteLine("{0} node is deleted ",lastDeleteNode);
         }
 
         public void Search(int data)
