@@ -13,7 +13,7 @@ namespace LinkedList
             Console.WriteLine("Welcome to LinkedList Programs");
             Console.WriteLine("Choose the option to perform the action");
             CustomLinkedList linkedList = new CustomLinkedList();
-            Console.WriteLine("1. AddLast \n2. AddFirst \n3. Append \n4. Instert new node in between \n5. Remove first node \n6. Remove Last node \n7. Search Node \n8. Insert Node");
+            Console.WriteLine("1. AddLast \n2. AddFirst \n3. Append \n4. Instert new node in between \n5. Remove first node \n6. Remove Last node \n7. Search Node \n8. Insert Node \n9. Delete particular node");
             int option=Convert.ToInt32(Console.ReadLine());
             switch(option)
             {
@@ -68,6 +68,16 @@ namespace LinkedList
                     linkedList.Display();
                     linkedList.Insert(30, 40);
                     linkedList.Display();//56 30 40 70
+                    break;
+                case 9:
+                    Console.Clear();
+                    linkedList.AddLast(56);
+                    linkedList.AddLast(30);
+                    linkedList.AddLast(40);
+                    linkedList.AddLast(70);
+                    linkedList.Display();
+                    linkedList.Delete(40);
+                    linkedList.Display();
                     break;
                 default:
                     Console.WriteLine("Please Choose the correct option");

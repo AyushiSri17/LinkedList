@@ -9,12 +9,14 @@ namespace LinkedList
     public class CustomLinkedList
     {
         public Node head;
+        public int count;
         public void AddLast(int data)
         {
             Node new_node = new Node(data);
             if (head == null)
             {
                 head = new_node;
+                count++;
             }
             else
             {
@@ -24,6 +26,7 @@ namespace LinkedList
                     temp = temp.next;
                 }
                 temp.next = new_node;
+                count++;
             }
             Console.WriteLine("{0} is added", new_node.data);
         }
@@ -129,6 +132,31 @@ namespace LinkedList
             }
         }
 
+        public void Delete(int data)
+        {
+            bool isFound = false;
+            Node temp = head;
+            if (temp == null)
+                Console.WriteLine("Linked List is Empty");
+            else
+            {
+                while (temp != null)
+                {
+                    if (temp.next.data == data)
+                    {
+                        Console.WriteLine("\n\n{0} node is found and deleted", temp.next.data);
+                        temp.next = temp.next.next;
+                        isFound = true;
+                        count--;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+                if (isFound == false)
+                    Console.WriteLine("{0} node is not present", data);
+            }
+        }
+
         public void Display()
         {
             Node temp = head;
@@ -144,6 +172,7 @@ namespace LinkedList
                     Console.Write(temp.data + " ");
                     temp = temp.next;
                 }
+                Console.WriteLine("\nLength of linked list is " + count);
             }
         }
     }
