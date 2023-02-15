@@ -69,9 +69,7 @@ namespace LinkedList
                     temp = temp.next;
                 }
                 if (isFound==false)
-                {
                     Console.WriteLine("{0} node is not present",data);
-                }
             }
         }
 
@@ -156,14 +154,34 @@ namespace LinkedList
                     Console.WriteLine("{0} node is not present", data);
             }
         }
-
+        public void SortLinkedList()
+        {
+            if (head == null)
+                Console.WriteLine("LinkedList is Empty");
+            else
+            {
+                int temp; 
+                Node first = head;
+                Node second;
+                while (first.next != null)
+                {
+                    second = first.next;
+                        if (first.data.CompareTo(second.data) > 0)
+                        {
+                            temp = first.data;
+                            first.data = second.data;
+                            second.data = temp;
+                        }
+                    first = first.next;
+                }
+            }
+            Console.Write("\nAfter Sorting ");
+        }
         public void Display()
         {
             Node temp = head;
             if (temp == null)
-            {
                 Console.WriteLine("LinkedList is Empty");
-            }
             else
             {
                 Console.WriteLine("\nDisplaying LinkedList");
